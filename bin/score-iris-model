@@ -1,0 +1,28 @@
+#! /usr/bin/env python
+__title__ = 'iris_classifier'
+__author__ = 'Steven Cutting'
+__author_email__ = 'steven@stevencutting.com'
+__created_on__ = '06/15/2017'
+__copyright__ = "iris_classifier Copyright (C) 2017  Steven Cutting"
+
+
+import click
+
+import iris_classifier as ic
+
+
+@click.command()
+@click.argument("test_data")
+@click.argument("test_data_labels")
+@click.argument("model_path")
+def main(model_path, test_data, test_data_labels):
+    x_data = ic.load_data(test_data)
+    y_data = ic.load_data(test_data_labels)
+
+    model = ic.load_model(model_path)
+
+    print("Model score is: {}".format(ic.score_model(model, x_data, y_data)))
+
+
+if __name__ == "__main__":
+    main()
