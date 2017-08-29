@@ -1,7 +1,0 @@
-# Include data files
-recursive-include data *
-
-include LICENSE
-
-# Include Jupyter Notebooks
-recursive-include notebooks *

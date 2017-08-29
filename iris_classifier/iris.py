@@ -47,5 +47,21 @@ def load_model(filename):
         return pickle.load(f)
 
 
-def load_pre_fit_model():
-    return resource_filename(__name__, "../data/iris_model.pickle")
+# ------------------------------------------------------------------------------
+# Included with the package
+
+
+def load_pkg_pre_fit_model():
+    """
+    Load the pre-fit model that is included with the package.
+    """
+    return pickle.loads(resource_string(__name__, "data/iris_model.pickle"))
+
+
+def load_pkg_data():
+    """
+    Load the data included with the package. The data that was use to fit the model.
+    Returns (x_data, y_data)
+    """
+    return (load_data(resource_filename(__name__, "data/iris_x.csv")),
+            load_data(resource_filename(__name__, "data/iris_y.csv")))

@@ -22,7 +22,7 @@ setup(
                       'numpy>=1.13.0',
                       'scipy>=0.19.0',
                       ],
-    # package_data={
-    #     '': ['*.json', ],
-    # },
+    package_data={'': ['iris_y.csv',
+                       'iris_x.csv',
+                       'iris_model.pickle']},
     )
