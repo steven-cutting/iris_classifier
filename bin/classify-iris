@@ -23,10 +23,10 @@ import iris_classifier as ic
 def main(sepal_length, sepal_width, petal_length, petal_width, model_path):
     predictor = ic.mk_predictor_func(ic.load_model(model_path))
 
-    print("The iris is: {}".format(predictor([[sepal_length,
-                                               sepal_width,
-                                               petal_length,
-                                               petal_width]])))
+    print("The iris is: {}".format(predictor(sepal_length,
+                                             sepal_width,
+                                             petal_length,
+                                             petal_width)))
 
 
 if __name__ == "__main__":

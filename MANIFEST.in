@@ -1,5 +1,7 @@
-# Ensure that the tests are included.
-recursive-include tests *
+# Include data files
+recursive-include data *
 
 include LICENSE
-include gpl-3.0-Preamble.txt
+
+# Include Jupyter Notebooks
+recursive-include notebooks *
