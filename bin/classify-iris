@@ -19,9 +19,10 @@ import iris_classifier as ic
 @click.argument("sepal_width")
 @click.argument("petal_length")
 @click.argument("petal_width")
-@click.argument("model_path")
+@click.option("-m", "--model-path", type=str, default=None)
 def main(sepal_length, sepal_width, petal_length, petal_width, model_path):
-    predictor = ic.mk_predictor_func(ic.load_model(model_path))
+    model = ic.load_model(model_path) if model_path else ic.load_pkg_pre_fit_model()
+    predictor = ic.mk_predictor_func(model)
 
     print("The iris is: {}".format(predictor(sepal_length,
                                              sepal_width,

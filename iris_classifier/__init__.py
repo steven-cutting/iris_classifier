@@ -13,9 +13,10 @@ from iris_classifier.iris import (load_data,
                                   score_model,
                                   mk_predictor_func,
                                   save_model,
-                                  load_model)
+                                  load_model,
+                                  load_pkg_pre_fit_model)
 
 __all__ = [load_data, save_data,
            mk_svc_model, score_model,
            mk_predictor_func,
-           save_model, load_model]
+           save_model, load_model, load_pkg_pre_fit_model]

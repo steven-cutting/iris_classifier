@@ -63,5 +63,8 @@ def load_pkg_data():
     Load the data included with the package. The data that was use to fit the model.
     Returns (x_data, y_data)
     """
-    return (load_data(resource_filename(__name__, "data/iris_x.csv")),
-            load_data(resource_filename(__name__, "data/iris_y.csv")))
+    try:
+        return (load_data(resource_filename(__name__, "data/iris_x.csv")),
+                load_data(resource_filename(__name__, "data/iris_y.csv")))
+    except IOError as e:
+        raise IOError("**Data Not Included In Package**: {}".format(e))
