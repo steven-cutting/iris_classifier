@@ -14,7 +14,7 @@ setup(
     description="Example for showing how to package python machine learning solutions.",
 
     author='Steven Cutting',
-    author_email='steven@stevencutting.com',
+    author_email='blog@stevencutting.com',
 
     packages=find_packages(exclude=('bin', 'notebooks')),
     scripts=['bin/classify-iris', 'bin/mk-iris-model', 'bin/score-iris-model'],

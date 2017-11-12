@@ -60,7 +60,7 @@ def load_pkg_pre_fit_model():
 
 def load_pkg_data():
     """
-    Load the data included with the package. The data that was use to fit the model.
+    Load the data included with the package. The data that was used to fit the model.
     Returns (x_data, y_data)
     """
     try:
